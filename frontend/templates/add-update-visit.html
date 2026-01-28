@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/styles/add-update-visit.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="side-bar">
+        <nav class="top">
+            <ul>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Student Search</a></li>
+                <li><a href="">Add/Update Visit</a></li>
+                <li><a href="">Medical Records</a></li>
+                <li><a href="">Prescriptions</a></li>
+                <li><a href="">Emergency Handling</a></li>
+            </ul>
+        </nav>
+
+        <nav class="bottom">
+            <ul>
+                <li><a href="">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class = "main-body">
+        <div class="head-banner">
+            <div class="logo">
+                <img src="">
+                <p class="logo-txt">BITS Clinic</p>
+            </div>
+            <div class="student-profile"></div>
+        </div>
+
+        <div class="add-update-visit-title">Add/Update Visit</div>
+
+        <div class="add-update-visit-container">
+            <p class="student-info-txt">Student Information</p>
+            <p class="student-name">Student Name: </p>
+            <p class="studentID">Student ID: </p>
+
+            <hr>
+
+            <div class="visit-detail-container">
+                <p class="visit-details">Visit Details</p>
+                <p class="subtitle">Log the reason for the student's visit and the exact time.</p>
+            </div>
+
+            <form action="" method="post">
+
+                <label for="reason">Reason for vist</label> <br>
+                <input type="text" id="reason" name="reason" placeholder="E.g., Sore throat, minor cut, fever, medication administration..." required>
+
+
+                <div class="date-time">
+                    <label for="date">Date</label> <br>
+                    <input type="date" id="date" name="date" required>
+                    
+                    <label for="time">Time</label> <br>
+                    <input type="time" id="time" name="time">
+                    
+                </div>
+
+                <div class="emergencyType-container">
+                    <p class="emergency-type">Emergency Type</p>
+                    <p class="subtitle">Select an emergency type if applicable to trigger notifications.</p>
+                </div>
+
+                <label for="emergency-category">Emergency Category</label> <br>
+                <select id="emergency-category" name="emergency-category"  required>
+                    <option value="" disabled selected>Select an emergency type</option>
+                    <option value="emergency">Emergency</option>
+                    <option value="non-emergency">Non-Emergency</option>
+                </select>
+
+                <div class="actions-container">
+                    <p class="action-taken">Action Taken / Notes</p>
+                    <p class="subtitle">Document all actions, observations, and instructions given to the student.</p>
+                </div>
+
+            
+                <label for="detailed-notes">Detailed Notes</label> <br>
+                <input type="text" id="detailed-notes" name="detailed-notes" placeholder="E.g., Administered Ibuprofen, applied bandage, advised rest, parent contacted...">
+
+                <div class="button-container">
+                    <button type="submit" name="action" value="save">Save Visit</button>
+                    <button type="submit" name="action" value="save_and_new">Save & Add New</button>
+                    <button type="button" onclick="">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            2026 BITS Clinic. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
