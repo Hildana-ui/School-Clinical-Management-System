@@ -4,46 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "/frontend/styles/prescriptions.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <title>Prescriptions</title>
 </head>
 <body>
-    <div class="side-bar">
-        <nav class="top">
-            <ul>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="">Student Search</a></li>
-                <li><a href="">Add/Update Visit</a></li>
-                <li><a href="">Medical Records</a></li>
-                <li><a href="">Prescriptions</a></li>
-                <li><a href="">Emergency Handling</a></li>
-            </ul>
+    <div class="layout">
+    <aside class="sidebar">
+        <nav>
+            <a href="dashboard.html" class="menu-item"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
+            <a href="student-search.html" class="menu-item"><i class="fa-solid fa-magnifying-glass"></i> <span>Student Search</span></a>
+            <a href="add-update-visit.html" class="menu-item"><i class="fa-solid fa-user-plus"></i> <span>Add / Update Visit</span></a>
+            <a href="medical-records.html" class="menu-item"><i class="fa-solid fa-notes-medical"></i> <span>Medical Records</span></a>
+            <a href="prescriptions.html" class="menu-item"><i class="fa-solid fa-prescription"></i> <span>Prescriptions</span></a>
+            <a href="emergency.html" class="menu-item"><i class="fa-solid fa-triangle-exclamation"></i> <span>Emergency Handling</span></a>
         </nav>
 
-        <nav class="bottom">
-            <ul>
-                <li><a href="">Settings</a></li>
-            </ul>
+        <nav class="bottom-nav">
+        <a href="" class="menu-item"><i class="fa-solid fa-gear"></i>Settings</a>
         </nav>
-    </div>
+    </aside>
 
 
     <div class = "main-body">
         <div class="head-banner">
-            <div class="logo">
-                <img src="">
-                <p class="logo-txt">BITS Clinic</p>
+            <div class="logo" id="logo">
+                <img src="/frontend/styles/images/image.png">
+                <h2>BITS Clinic</h2>
             </div>
-            <div class="student-profile"></div>
+            <div class="nurse-profile"></div>
         </div>
 
         <div class="midsection-container">
-            <p class="prescription-title">New Prescription</p>
+            <h1>New Prescription</h1>
             <p class="subtitle">Enter medication details, dosage, instructions, and any relevant notes for the student's visit.</p>
 
-            <p class="medication-details">Medication details</p>
-            <form action="" method="post">
+            <h3>Medication details</h3>
+            <form id="prescriptionForm">
                 <label for="medication-name">Medication Name</label><br>
-                <select id="medication-name" name="medication-name" required>
+                <select id="medication-name" name="medication-name" class="select" required>
                     <option value="" ></option>
                 </select>
 
@@ -78,25 +76,24 @@
                     </div>
                 </div>
 
-            <p class="s-instructions">Specific Instructions</p>
-            <label for="instructions">Instructions</label>
-            <input type="text" id="instructions" name="instructions" placeholder="E.g., Administer orally with water. May be taken with or without food. Complete the full course.">
+            <h3>Specific Instructions</h3>
+            <label for="instructions">Instructions</label><br>
+            <textarea name="instructions" id="instructions" rows="4" placeholder="E.g., Administer orally with water. May be taken with or without food. Complete the full course."></textarea>
 
-            <p class="Prescription-notes">Prescriptions Notes</p>
-            <label for="notes">Notes</label>
-            <input type="text" id="notes" name="notes" placeholder="E.g., Student is allergic to penicillin, verified with parent. Counselled student on proper medication adherence.">
+            <h3>Prescriptions Notes</h3>
+            <label for="notes">Notes</label><br>
+            <textarea name="notes" id="notes" rows="4" placeholder="E.g., Student is allergic to penicillin, verified with parent. Counselled student on proper medication adherence."></textarea>
 
             <div class="button-container">
-                <button type="submit" value="save">Save Prescription</button>
-                <button type="button" onclick="">Cancel</button>
+                <button type="button" onclick="" id="cancel">Cancel</button>
+                <button type="submit" value="save" id="save">Save Prescription</button>
             </div>
             </form>
         </div>
 
-        <footer>
-            2026 BITS Clinic. All rights reserved.
-        </footer>
+
     </div>
-    
+    </div>
+    <script src="../js/prescriptions.js"></script>
 </body>
 </html>
