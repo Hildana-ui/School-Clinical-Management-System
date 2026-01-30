@@ -4,55 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/styles/student-search-profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <title>Student Profile</title>
 </head>
 <body>
-    <div class="side-bar">
-        <nav class="top">
-            <ul>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="">Student Search</a></li>
-                <li><a href="">Add/Update Visit</a></li>
-                <li><a href="">Medical Records</a></li>
-                <li><a href="">Prescriptions</a></li>
-                <li><a href="">Emergency Handling</a></li>
-            </ul>
+    <div class="layout">
+    <aside class="sidebar">
+        <nav>
+        <a href="#" class="menu-item"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
+        <a class="menu-item" href="student-search.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Student Search</span> </a>
+        <a href="#" class="menu-item"><i class="fa-solid fa-user-plus"></i><span>Add / Update Visit</span></a>
+        <a href="#" class="menu-item"><i class="fa-solid fa-notes-medical"></i> <span>Medical Records</span></a>
+        <a href="prescriptions.html" class="menu-item"><i class="fa-solid fa-prescription"></i> <span>Prescriptions</span></a>
+        <a href="#" class="menu-item"><i class="fa-solid fa-triangle-exclamation"></i> <span>Emergency Handling</span></a>
         </nav>
-        <nav class="bottom">
-            <ul>
-                <li><a href="">Settings</a></li>
-            </ul>
+        
+        <nav class="bottom-nav">
+        <a href="#" class="menu-item"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
         </nav>
-    </div>
+    </aside>
 
 
     <div class = "main-body">
         <div class="head-banner">
-            <div class="logo">
-                <img src="">
-                <p class="logo-txt">BITS Clinic</p>
+            <div class="logo" id="logo">
+                <img src="../styles/images/image.png">
+                <h2>BITS Clinic</h2>
             </div>
-            <div class="student-profile"></div>
+            <div class="nurse-profile"></div>
         </div>
 
         <div class="student-view">
-            <div class="student-id-view"></div>
+            <div>
+                <div id="student-name"></div>
+                <div id="studentId"></div>
+            </div>
             <div class="mini-container">
-                <div class="add-visit">Add visit</div>
-                <div class="edit-medical-record">Edit Medical Record</div>
+                <a href="add-update-visit.html"><i class="fa-solid fa-user-plus"></i>Add Visit</a>
+                <a href="#"><i class="fa-solid fa-notes-medical"></i>Edit Medical Record</a>
             </div>
         </div>
 
         <div class="student-info-table">
-            <div class="student-details"></div>
-            <div class="medical-record-details"></div>
-            <div class="visit-history"></div>
+            <button type="button" class="student-details">Student Details</button>
+            <button type="button" class="medical-record-details">Medical Record</button>
+            <button type="button" class="visit-history">Visit History</button>
         </div>
 
-        <footer>
-            2026 BITS Clinic. All rights reserved.
-        </footer>
+        <div id="details-container"></div>     
     </div>
-
+    </div>
+    <script src="../js/student-search-profile.js"></script>
 </body>
 </html>
