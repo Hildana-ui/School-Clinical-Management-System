@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: Inter;
+  background: #ffffff;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  transition: width 0.3s;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 12px 18px;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom-nav a {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+
+.sidebar.collapsed {
+  width: 50px;
+}
+
+.sidebar.collapsed a span {
+  display: none;
+}
+
+.sidebar.collapsed i {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-item {
+  font-size: 15px;
+  gap: 12px;
+}
+
+
+.sidebar a {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: #444;
+  text-decoration: none;
+  margin-bottom: 5px;
+  gap: 12px;
+  opacity: 1;
+  border-radius: 12px;
+  border-color: #000000FF;
+  border-width: 0px;
+  border-style: solid;
+}
+
+.sidebar a.active {
+  background: #55DBF6FF;
+  color: white;
+}
+
+.sidebar a:hover {
+  color: #ffffff;
+  background: #55DBF6FF;
+}
+
+.head-banner {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #F4F5F6FF;
+  padding: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+  color: #1dbcd2;
+  display: flex;
+  gap: 10px ;
+  align-items: center;
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+
+.nurse-profile {
+  border-radius: 50%;
+  background: #e5e7eb;
+  width: 48px;
+  height: 48px;
+}
+
+.content {
+  flex: 1;
+  padding: 10px 30px 30px 30px;
+}
+
+.content h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.search-bar i {
+  color: white;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  outline: none;
+  width: 100%;        
+  max-width: 610px;   
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background: #55DBF6FF;
+  fill: white;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-items: center;
+}
+
+.filters {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.filters select {
+  padding: 8px;
+  margin-right: 10px;
+  margin-bottom: 35px;
+  border-color: #DDE2E4FF;
+  border-radius: 10px;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.06);
+  color: #161B1DFF;
+}
+
+table {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1086px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #F4F5F6FF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+
+.action-btn {
+  background: #1dbcd2;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  justify-content: center;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  background-color: white;
+  cursor: pointer;
+  color: black;
+}
+
+.pagination button.active {
+  border: 1px solid #DDE2E4FF;
+  border-radius: 5px;
+}
+
+.prev-next {
+  border: none;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+}

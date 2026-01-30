@@ -1,6 +1,6 @@
 const db = require('../db');
 
-exports.getAllEmergencyTypes = (res) => {
+exports.getAllEmergencyTypes = (req, res) => {
     const query = `
         SELECT emergency_type_id, name, description
         FROM emergency_types

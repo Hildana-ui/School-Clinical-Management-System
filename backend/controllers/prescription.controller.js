@@ -62,7 +62,7 @@ exports.updatePrescription = (req, res) => {
         instructions
     } = req.body;
 
-    if (!medication || !dosage) {
+    if (!medication_id || !dosage) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
@@ -84,7 +84,8 @@ exports.updatePrescription = (req, res) => {
             dosage,
             frequency,
             duration,
-            instructions
+            instructions,
+            prescription_id
         ],
         (err, result) => {
             if (err) {
