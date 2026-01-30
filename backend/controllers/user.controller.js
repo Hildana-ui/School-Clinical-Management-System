@@ -11,12 +11,12 @@ exports.getAllUsers = (req, res) => {
 };
 
 
-exports.getUserbyId = (req, res) => {
+exports.getUserById = (req, res) => {
     const id = req.params.id;
 
 
     db.query(
-        `SELECT user_id, username, email, role_id, is_active WHERE user_id = ?`,
+        `SELECT user_id, username, email, role_id, is_active FROM users WHERE user_id = ?`,
         [id],
         (err, results) => {
             if (err) return res.status(500).json({ error: err.message });
@@ -38,7 +38,7 @@ exports.updateUser = (req, res) => {
         [email, role_id, id],
         (err, result) => {
             if (err) return res.status(500).json({ error: err.message });
-            if (result.affetedRows === 0)
+            if (result.affectedRows === 0)
                 return res.status(404).json({ message: 'User not found' });
 
             res.json({ message: 'User updated' });

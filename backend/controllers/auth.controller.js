@@ -1,18 +1,38 @@
 const db = require('../db');
-const bcrypt = require('bycrypt');
+const bcrypt = require('bcrypt');
 
 exports.register = (req, res) => {
     const { username, password, email, role_id } = req.body;
+
+    if (!username || !password || !email || !role_id) {
+        return res.status(400).json({ message: 'Missing required fields' });
+    }
 
     const passwordHash = bcrypt.hashSync(password, 10);
 
     db.query(
         `INSERT INTO users (username, password_hash, email, role_id, is_active)
-        VALUES(?, ?, ?, ?, true)`,
+         VALUES (?, ?, ?, ?, true)`,
         [username, passwordHash, email, role_id],
-        (err) => {
+        (err, result) => {
             if (err) return res.status(500).json({ error: err.message });
-            res.status(201).json({ message: 'User registered successfully'});
+
+            const user_id = result.insertId;
+
+            // ✅ If user is a student, create entry in students table
+            if (parseInt(role_id) === 3) {
+                db.query(
+                    `INSERT INTO students (student_id, student_name)
+                     VALUES (?, ?)`,
+                    [user_id, username], // default name = username; you can allow later editing
+                    (err2) => {
+                        if (err2) return res.status(500).json({ error: err2.message });
+                        res.status(201).json({ message: 'Student registered successfully' });
+                    }
+                );
+            } else {
+                res.status(201).json({ message: 'User registered successfully' });
+            }
         }
     );
 };

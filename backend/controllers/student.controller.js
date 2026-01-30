@@ -65,3 +65,23 @@ exports.getStudentbyId = (req, res) => {
         res.json(results[0]);
     });
 };
+
+exports.getStudentInfoById = (req, res) => {
+    const user_id = req.params.id;
+
+    const query = `
+        SELECT student_id, student_name
+        FROM students
+        WHERE user_id = ?
+    `;
+
+    db.query(query, [user_id], (err, results) => {
+        if (err) return res.status(500).json({ error: err.message });
+
+        if (results.length === 0) {
+            return res.status(404).json({ message: 'Student not found' });
+        }
+
+        res.json(results[0]);
+    });
+};
