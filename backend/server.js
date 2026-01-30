@@ -13,6 +13,7 @@ app.use('/api/visits', require('./routes/visit.routes'));
 app.use('/api/emergency-types', require('./routes/emergencyType.routes'))
 app.use('/api/prescription', require('./routes/prescription.routes'));
 app.use('/api/student-search', require('./routes/student.routes'));
+app.use('/api/medical-records', require('./routes/medicalecords.routes'));
 // app.use('/api/students', require('./routes/student.routes'));
 
 

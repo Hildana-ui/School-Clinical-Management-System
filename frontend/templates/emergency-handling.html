@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Clinic Pro - Emergency Handling</title>
+    <link rel="stylesheet" href="emergency-handling.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="#" class="nav-item">Dashboard</a>
+        <a href="#" class="nav-item">Student Search</a>
+        <a href="#" class="nav-item">Add / Update Visit</a>
+        <a href="#" class="nav-item">Medical Records</a>
+        <a href="#" class="nav-item">Prescriptions</a>
+        <a href="#" class="nav-item active">Emergency Handling</a>
+        <div class="sidebar-bottom">
+            <a href="#" class="nav-item">Settings</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">School Clinic Pro</div>
+            <div class="user-avatar"></div>
+        </header>
+
+        <!-- Content -->
+        <main class="content">
+            <h1 class="page-title">Emergency Handling</h1>
+
+            <!-- Emergency Type -->
+            <div class="card">
+                <h2 class="card-title">Select Emergency Type and Notify</h2>
+                <div class="form-group">
+                    <label class="form-label">Emergency Type</label>
+                    <select class="form-select" id="emergencyType">
+                        <option value="">Select Emergency Type...</option>
+                        <option value="asthma">Asthma Attack</option>
+                        <option value="allergy">Allergic Reaction</option>
+                        <option value="injury">Physical Injury</option>
+                        <option value="fainting">Fainting/Dizziness</option>
+                        <option value="seizure">Seizure</option>
+                        <option value="head">Head Injury</option>
+                        <option value="other">Other Emergency</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="smsBtn">
+                    Trigger SMS Notification to Parent
+                </button>
+            </div>
+
+            <!-- Log Emergency -->
+            <div class="card">
+                <h2 class="card-title">Log Emergency Details</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Student ID</label>
+                        <input type="text" class="form-input" id="studentId">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Date & Time</label>
+                        <input type="datetime-local" class="form-input" id="emergencyDateTime">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Detailed Notes</label>
+                    <textarea class="form-textarea" id="detailedNotes"></textarea>
+                </div>
+
+                <button class="btn btn-primary" id="saveBtn">
+                    Save Emergency Log
+                </button>
+            </div>
+
+            <!-- Logs -->
+            <div class="card">
+                <h2 class="card-title">Recent Emergency Log Entries</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Type</th>
+                                <th>Date & Time</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 School Clinic Pro</p>
+        </footer>
+    </div>
+
+    <script src="emergency-handling.js"></script>
+</body>
+</html>
