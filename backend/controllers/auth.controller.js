@@ -1,5 +1,5 @@
 const db = require('../db');
-const bcrypt = require('bycrypt');
+const bcrypt = require('bcrypt');
 
 exports.register = (req, res) => {
     const { username, password, email, role_id } = req.body;
