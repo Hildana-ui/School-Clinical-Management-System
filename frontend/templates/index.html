@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Clinical Management - Dashboard</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+<script src="../js/dashboard.js"></script>
+
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">🏥</div>
+        <div>
+          <div class="sidebar-title">School Clinic Pro</div>
+          <div class="sidebar-subtitle">Admin Dashboard</div>
+        </div>
+      </div>
+      <nav class="nav-section">
+        <div class="nav-section-title">Main</div>
+        <a href="index.html" class="nav-link active">📊 Dashboard</a>
+      </nav>
+      <nav class="nav-section">
+        <div class="nav-section-title">Management</div>
+        <a href="classes.html" class="nav-link">📚 Class Management</a>
+        <a href="departments.html" class="nav-link">🏢 Department Management</a>
+        <a href="emergency-types.html" class="nav-link">🚨 Emergency Types</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header class="header">
+        <h1 class="header-title">Dashboard</h1>
+        <div class="header-actions">
+          <span>Welcome back!</span>
+          <div class="user-avatar">A</div>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Classes</div>
+            <div class="stat-value" id="classCount">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Departments</div>
+            <div class="stat-value" id="deptCount">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Emergency Types</div>
+            <div class="stat-value" id="emergencyCount">0</div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card">
+          <h2 class="card-title">Quick Actions</h2>
+          <p class="card-subtitle">Manage your school clinic data</p>
+          <div class="actions-grid">
+            <a href="classes.html" class="action-card">
+              <div class="action-card-title">📚 Classes</div>
+              <div class="action-card-subtitle">Manage grade levels</div>
+            </a>
+            <a href="departments.html" class="action-card">
+              <div class="action-card-title">🏢 Departments</div>
+              <div class="action-card-subtitle">Manage school departments</div>
+            </a>
+            <a href="emergency-types.html" class="action-card">
+              <div class="action-card-title">🚨 Emergencies</div>
+              <div class="action-card-subtitle">Configure emergency types</div>
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        © 2026 School Clinic. All rights reserved.
+      </footer>
+    </div>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

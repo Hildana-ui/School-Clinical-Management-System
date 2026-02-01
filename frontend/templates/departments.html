@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Management - School Clinic Pro</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">🏥</div>
+        <div>
+          <div class="sidebar-title">School Clinic Pro</div>
+          <div class="sidebar-subtitle">Admin Dashboard</div>
+        </div>
+      </div>
+      <nav class="nav-section">
+        <div class="nav-section-title">Main</div>
+        <a href="index.html" class="nav-link">📊 Dashboard</a>
+      </nav>
+      <nav class="nav-section">
+        <div class="nav-section-title">Management</div>
+        <a href="classes.html" class="nav-link">📚 Class Management</a>
+        <a href="departments.html" class="nav-link active">🏢 Department Management</a>
+        <a href="emergency-types.html" class="nav-link">🚨 Emergency Types</a>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="header">
+        <h1 class="header-title">Department Management</h1>
+        <div class="header-actions">
+          <div class="user-avatar">A</div>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <div class="card">
+          <h2 class="card-title" id="formTitle">Add New Department</h2>
+          <form id="deptForm">
+            <input type="hidden" id="editId">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Department Name</label>
+                <input type="text" class="form-input" id="deptName" placeholder="e.g., Science" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Lead Staff</label>
+                <input type="text" class="form-input" id="leadStaff" placeholder="e.g., Dr. Smith">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Members</label>
+                <input type="number" class="form-input" id="members" placeholder="e.g., 10">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Status</label>
+                <select class="form-input" id="status">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Description</label>
+              <textarea class="form-textarea" id="description" placeholder="Department description..."></textarea>
+            </div>
+            <div class="flex gap-2">
+              <button type="button" class="btn btn-secondary" id="cancelBtn" style="display:none;">Cancel</button>
+              <button type="submit" class="btn btn-primary" id="submitBtn">Add Department</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">Existing Departments</h2>
+            <div class="search-container">
+              <span class="search-icon">🔍</span>
+              <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+            </div>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Lead Staff</th>
+                  <th>Members</th>
+                  <th>Status</th>
+                  <th class="actions-cell">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="deptTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">© 2026 School Clinic Pro. All rights reserved.</footer>
+    </div>
+  </div>
+
+  <script src="../js/departments.js"></script>
+</body>
+</html>
