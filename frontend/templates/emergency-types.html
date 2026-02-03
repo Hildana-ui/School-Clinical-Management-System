@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Types - School Clinic Pro</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">🏥</div>
+        <div>
+          <div class="sidebar-title">School Clinic Pro</div>
+          <div class="sidebar-subtitle">Admin Dashboard</div>
+        </div>
+      </div>
+      <nav class="nav-section">
+        <div class="nav-section-title">Main</div>
+        <a href="index.html" class="nav-link">📊 Dashboard</a>
+      </nav>
+      <nav class="nav-section">
+        <div class="nav-section-title">Management</div>
+        <a href="classes.html" class="nav-link">📚 Class Management</a>
+        <a href="departments.html" class="nav-link">🏢 Department Management</a>
+        <a href="emergency-types.html" class="nav-link active">🚨 Emergency Types</a>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="header">
+        <h1 class="header-title">Emergency Type Management</h1>
+        <div class="header-actions">
+          <div class="user-avatar">A</div>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <div class="card">
+          <h2 class="card-title" id="formTitle">Add New Emergency Type</h2>
+          <p class="card-subtitle">Define a new category for medical emergencies.</p>
+          <form id="emergencyForm">
+            <input type="hidden" id="editId">
+            <div class="form-group">
+              <label class="form-label">Emergency Type Name</label>
+              <input type="text" class="form-input" id="typeName" placeholder="e.g., Allergic Reaction" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Description</label>
+              <textarea class="form-textarea" id="description" placeholder="Brief description..."></textarea>
+            </div>
+            <div class="flex gap-2">
+              <button type="button" class="btn btn-secondary" id="cancelBtn" style="display:none;">Cancel</button>
+              <button type="submit" class="btn btn-primary" id="submitBtn">Add Emergency Type</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Existing Emergency Types</h2>
+          <p class="card-subtitle">Manage the list of predefined emergency types.</p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Type Name</th>
+                  <th>Description</th>
+                  <th class="actions-cell">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="emergencyTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">© 2026 School Clinic Pro. All rights reserved.</footer>
+    </div>
+  </div>
+
+ <script src="../js/emergency-types.js"></script>
+</body>
+</html>
