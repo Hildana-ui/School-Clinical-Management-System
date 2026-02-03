@@ -35,6 +35,7 @@ Running the Application
 5. Start the backend server:
   ```bash
   node server.js
+
 6. Go to the frontend folder.
 7. Right-click an HTML file (e.g. student-search.html) and select
 “Open with Live Server”.
