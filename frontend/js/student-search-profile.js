@@ -33,14 +33,14 @@ const idEl = document.getElementById('studentId');
 
 // Load student basic info
 async function loadStudentDetails() {
-  const res = await fetch(`/api/students/${studentId}`);
+  const res = await fetch(`http://localhost:3000/api/students/${studentId}`);
   const student = await res.json();
 
   nameEl.textContent = `Student ID: ${student.student_number}`;
-  idEl.textContent = `Class: ${student.class_id}`;
+  idEl.textContent = `Year: ${student.grade}`;
 }
 
-// default load
+
 loadStudentDetails();
 
 
@@ -59,13 +59,13 @@ function setActive(btn) {
 async function loadStudentInfo() {
   setActive(studentBtn);
 
-  const res = await fetch(`/api/students/${studentId}`);
+  const res = await fetch(`http://localhost:3000/api/students/${studentId}`);
   const s = await res.json();
 
   detailsContainer.innerHTML = `
     <h3>Student Information</h3>
     <p><strong>Student Number:</strong> ${s.student_number}</p>
-    <p><strong>Class:</strong> ${s.class_id}</p>
+    <p><strong>Class:</strong> ${s.grade}</p>
     <p><strong>Parent Name:</strong> ${s.parent_name}</p>
     <p><strong>Parent Contact:</strong> ${s.parent_contact}</p>
   `;
@@ -76,13 +76,13 @@ async function loadStudentInfo() {
 async function loadStudentInfo() {
   setActive(studentBtn);
 
-  const res = await fetch(`/api/students/${studentId}`);
+  const res = await fetch(`http://localhost:3000/api/students/${studentId}`);
   const s = await res.json();
 
   detailsContainer.innerHTML = `
     <h3>Student Information</h3>
     <p><strong>Student Number:</strong> ${s.student_number}</p>
-    <p><strong>Class:</strong> ${s.class_id}</p>
+    <p><strong>Class:</strong> ${s.section}</p>
     <p><strong>Parent Name:</strong> ${s.parent_name}</p>
     <p><strong>Parent Contact:</strong> ${s.parent_contact}</p>
   `;
@@ -92,7 +92,7 @@ async function loadStudentInfo() {
 async function loadVisitHistory() {
   setActive(visitBtn);
 
-  const res = await fetch(`/api/visits/student/${studentId}`);
+  const res = await fetch(`http://localhost:3000/api/visits/student/${studentId}`);
   const visits = await res.json();
 
   if (visits.length === 0) {
@@ -116,5 +116,5 @@ studentBtn.addEventListener('click', loadStudentInfo);
 medicalBtn.addEventListener('click', loadMedicalRecords);
 visitBtn.addEventListener('click', loadVisitHistory);
 
-// DEFAULT tab
+
 loadStudentInfo();

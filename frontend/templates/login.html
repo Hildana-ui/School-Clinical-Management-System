@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/frontend/styles/auth.css" />
+  <title>Login</title>
+</head>
+<body>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="logo">
+      <img src="../styles/images/image.png" />
+      <h2>BITS Clinic</h2>
+    </div>
+
+    <h3>Welcome Back</h3>
+    <p class="subtitle">Login to continue</p>
+
+    <form id="loginForm">
+      <label>Username</label>
+      <input type="text" id="username" required />
+
+      <label>Password</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p class="switch">
+      Don’t have an account?
+      <a href="signup.html">Sign up</a>
+    </p>
+  </div>
+</div>
+
+<script src="../js/login.js"></script>
+</body>
+</html>

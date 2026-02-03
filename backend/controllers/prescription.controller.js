@@ -6,8 +6,8 @@ exports.addPrescription = (req, res) => {
         medication_id,
         dosage,
         frequency,
-        duration,
-        instructions
+        instructions,
+        notes
     } = req.body;
 
     if (!visit_id || !medication_id || !dosage) {
@@ -20,8 +20,8 @@ exports.addPrescription = (req, res) => {
             medication_id,
             dosage,
             frequency,
-            duration,
-            instructions
+            instructions,
+            notes
         )
         VALUES (?, ?, ?, ?, ?,?)
     `;
@@ -33,8 +33,8 @@ exports.addPrescription = (req, res) => {
             medication_id,
             dosage,
             frequency,
-            duration,
-            instructions
+            instructions,
+            notes
         ],
         (err, result) => {
             if(err) {
@@ -58,8 +58,8 @@ exports.updatePrescription = (req, res) => {
         medication_id,
         dosage,
         frequency,
-        duration,
-        instructions
+        instructions,
+        notes
     } = req.body;
 
     if (!medication_id || !dosage) {
@@ -72,8 +72,8 @@ exports.updatePrescription = (req, res) => {
             medication_id = ?,
             dosage = ?,
             frequency = ?,
-            duration = ?,
             instructions = ?
+            notes = ?
         WHERE prescription_id = ?
     `;
 
@@ -83,8 +83,8 @@ exports.updatePrescription = (req, res) => {
             medication_id,
             dosage,
             frequency,
-            duration,
             instructions,
+            notes,
             prescription_id
         ],
         (err, result) => {

@@ -12,7 +12,7 @@ exports.addVisit = (req, res) => {
     const nurse_id = req.user_id;
 
 
-    if (!student_id || !reason || !emergency_type || !visit_date) {
+    if (!student_id || !reason || !emergency_type_id || !visit_date) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
@@ -59,7 +59,7 @@ exports.updateVisit = (req, res) => {
         notes
     } = req.body;
 
-    if (!reason || !emergency_type || !visit_date) {
+    if (!reason || !emergency_type_id || !visit_date) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
@@ -108,3 +108,21 @@ exports.updateVisit = (req, res) => {
         }
     );
 };
+
+
+exports.getVisitById = (req, res) => {
+  const visit_id = req.params.id;
+
+  db.query(
+    `SELECT * FROM visits WHERE visit_id = ?`,
+    [visit_id],
+    (err, results) => {
+      if (err) return res.status(500).json({ error: err.message });
+      if (results.length === 0)
+        return res.status(404).json({ message: 'Visit not found' });
+
+      res.json(results[0]);
+    }
+  );
+};
+

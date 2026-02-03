@@ -23,7 +23,7 @@ async function loadStudents(query = '') {
     if (visit) params.append('visit', visit);
 
     // Fetch students from backend
-    const response = await fetch(`/api/students?${params.toString()}`);
+    const response = await fetch(`http://localhost:3000/api/students?${params.toString()}`);
     if (!response.ok) throw new Error('Failed to fetch students');
     const students = await response.json();
 
@@ -48,19 +48,22 @@ async function loadStudents(query = '') {
     const end = start + pageSize;
     const studentsToShow = filteredStudents.slice(start, end);
 
-    // Render table rows
+    
     tableBody.innerHTML = '';
     if (studentsToShow.length === 0) {
       tableBody.innerHTML = '<tr><td colspan="4">No students found</td></tr>';
     } else {
       studentsToShow.forEach(s => {
         const row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${s.student_number}</td>
-          <td>${s.class_id}</td>
-          <td>${s.last_visit_date ? new Date(s.last_visit_date).toLocaleDateString() : 'N/A'}</td>
-          <td><button class="action-btn" onclick="viewStudent('${s.user_id}')">👁</button></td>
-        `;
+         row.innerHTML = `
+            <td>${s.student_number || 'N/A'}</td>
+            <td>${s.student_name || 'N/A'}</td>
+            <td>${s.grade || 'N/A'}</td>
+            <td>${s.last_visit_date ? new Date(s.last_visit_date).toLocaleDateString() : 'N/A'}</td>
+            <td>
+              <button class="action-btn" onclick="viewStudent('${s.user_id}')">👁</button>
+            </td>
+          `;
         tableBody.appendChild(row);
       });
     }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles/auth.css" />
+  <title>Complete Student Profile</title>
+</head>
+<body>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h3>Complete Your Profile</h3>
+    <p class="subtitle">We need a few more details</p>
+
+    <form id="studentProfileForm">
+      <label>Student Number</label>
+      <input type="text" id="student_number" required />
+
+      <label>Grade</label>
+      <select id="grade" required>
+        <option value="">Select year</option>
+        <option value="1">1st Year</option>
+        <option value="2">2nd Year</option>
+        <option value="3">3rd Year</option>
+        <option value="4">4th Year</option>
+      </select>
+
+      <label>Section</label>
+      <input type="text" id="section" placeholder="e.g. A" required />
+
+      <label>Parent / Guardian Name</label>
+      <input type="text" id="parent_name" required />
+
+      <label>Parent Contact</label>
+      <input type="text" id="parent_contact" required />
+
+      <button type="submit">Save & Continue</button>
+    </form>
+  </div>
+</div>
+
+<script src="../js/complete-student-profile.js"></script>
+</body>
+</html>

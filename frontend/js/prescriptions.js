@@ -49,7 +49,7 @@ form.addEventListener('submit', async (e) => {
     };
 
     try {
-        const res = await fetch('/api/prescriptions', {
+        const res = await fetch('http://localhost:3000/api/prescriptions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #f9fafb;
+  margin: 0;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  background: white;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  color: #1dbcd2;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+button {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #55DBF6FF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1dbcd2;
+}
+
+.switch {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.switch a {
+  color: #1dbcd2;
+  text-decoration: none;
+}
