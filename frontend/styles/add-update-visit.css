@@ -1,0 +1,100 @@
+.layout {
+    display: flex;
+}
+
+aside {
+    width: 100px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+aside a {
+    text-decoration: none;
+    font-size: 28px;
+}
+
+.head-banner {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #F4F5F6FF;
+  padding: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+  color: #1dbcd2;
+  display: flex;
+  gap: 10px ;
+  align-items: center;
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+
+.nurse-profile {
+  border-radius: 50%;
+  background: #e5e7eb;
+  width: 48px;
+  height: 48px;
+}
+
+.main-body {
+    width: 100%;
+}
+
+.visit-detail-container, .emergencyType-container, .actions-container {
+    padding: 10px;
+}
+
+#reason, #detailed-notes {
+    width: 100%;
+    max-width: 768px;
+    border: 2px solid #F4F5F6FF;
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 8px;
+}
+
+.date-time {
+    display: flex;
+    gap: 30px;
+}
+
+#date, #time {
+    margin-top: 8px;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #F4F5F6FF;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#emergency-category {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #F4F5F6FF;
+    color: #444;
+}
+
+.button-container {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+button {
+    background: white;
+    padding: 10px 15px;
+    border: 2px solid #F4F5F6FF;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: #1dbcd2;
+    color: white;
+}
+

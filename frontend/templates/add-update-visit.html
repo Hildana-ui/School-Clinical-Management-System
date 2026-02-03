@@ -4,69 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/styles/add-update-visit.css">
-    <title>Document</title>
+    <title>Add / Update Visit</title>
 </head>
 <body>
-    <div class="side-bar">
-        <nav class="top">
-            <ul>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="">Student Search</a></li>
-                <li><a href="">Add/Update Visit</a></li>
-                <li><a href="">Medical Records</a></li>
-                <li><a href="">Prescriptions</a></li>
-                <li><a href="">Emergency Handling</a></li>
-            </ul>
-        </nav>
-
-        <nav class="bottom">
-            <ul>
-                <li><a href="">Settings</a></li>
-            </ul>
-        </nav>
-    </div>
-
+    <div class="layout">
+    <aside>
+        <a href="student-search.html">⬅️</a>
+    </aside>
 
     <div class = "main-body">
         <div class="head-banner">
             <div class="logo">
-                <img src="">
-                <p class="logo-txt">BITS Clinic</p>
+                <img src="../styles/images/image.png">
+                <h2>BITS Clinic</h2>
             </div>
-            <div class="student-profile"></div>
+            <div class="nurse-profile"></div>
         </div>
 
-        <div class="add-update-visit-title">Add/Update Visit</div>
+        <h1>Add / Update Visit</h1>
 
         <div class="add-update-visit-container">
-            <p class="student-info-txt">Student Information</p>
+            <h2>Student Information</h2>
             <p class="student-name">Student Name: </p>
             <p class="studentID">Student ID: </p>
-
             <hr>
 
             <div class="visit-detail-container">
-                <p class="visit-details">Visit Details</p>
+                <h2>Visit Details</h2>
                 <p class="subtitle">Log the reason for the student's visit and the exact time.</p>
             </div>
 
-            <form action="" method="post">
+            <form id="visitForm">
 
                 <label for="reason">Reason for vist</label> <br>
-                <input type="text" id="reason" name="reason" placeholder="E.g., Sore throat, minor cut, fever, medication administration..." required>
-
+                <textarea name="reason" id="reason" rows="4" placeholder="E.g., Sore throat, minor cut, fever, medication administration..." ></textarea>
 
                 <div class="date-time">
+                    <div>
                     <label for="date">Date</label> <br>
                     <input type="date" id="date" name="date" required>
-                    
+                    </div>
+
+                    <div>
                     <label for="time">Time</label> <br>
                     <input type="time" id="time" name="time">
-                    
+                    </div>
                 </div>
 
                 <div class="emergencyType-container">
-                    <p class="emergency-type">Emergency Type</p>
+                    <h2>Emergency Type</h2>
                     <p class="subtitle">Select an emergency type if applicable to trigger notifications.</p>
                 </div>
 
@@ -78,25 +64,22 @@
                 </select>
 
                 <div class="actions-container">
-                    <p class="action-taken">Action Taken / Notes</p>
+                    <h2>Action Taken / Notes</h2>
                     <p class="subtitle">Document all actions, observations, and instructions given to the student.</p>
                 </div>
-
             
                 <label for="detailed-notes">Detailed Notes</label> <br>
-                <input type="text" id="detailed-notes" name="detailed-notes" placeholder="E.g., Administered Ibuprofen, applied bandage, advised rest, parent contacted...">
+                <textarea name="detailed-notes" id="detailed-notes" rows="4" placeholder="E.g., Administered Ibuprofen, applied bandage, advised rest, parent contacted..."></textarea>
 
                 <div class="button-container">
-                    <button type="submit" name="action" value="save">Save Visit</button>
-                    <button type="submit" name="action" value="save_and_new">Save & Add New</button>
-                    <button type="button" onclick="">Cancel</button>
+                    <button type="submit" name="action" value="save" id="save">Save Visit</button>
+                    <button type="submit" name="action" value="save_and_new" id="save_and_new">Save & Add New</button>
+                    <button type="button" onclick="history.back()">Cancel</button>
                 </div>
             </form>
         </div>
 
-        <footer>
-            2026 BITS Clinic. All rights reserved.
-        </footer>
+    </div>
     </div>
 </body>
 </html>

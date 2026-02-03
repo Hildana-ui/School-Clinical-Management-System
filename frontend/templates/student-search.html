@@ -16,7 +16,7 @@
         <nav>
         <a href="#" class="menu-item"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
         <a class="menu-item" href="student-search.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Student Search</span> </a>
-        <a href="#" class="menu-item"><i class="fa-solid fa-user-plus"></i><span>Add / Update Visit</span></a>
+        <a href="add-update-visit.html" class="menu-item"><i class="fa-solid fa-user-plus"></i><span>Add / Update Visit</span></a>
         <a href="#" class="menu-item"><i class="fa-solid fa-notes-medical"></i> <span>Medical Records</span></a>
         <a href="prescriptions.html" class="menu-item"><i class="fa-solid fa-prescription"></i> <span>Prescriptions</span></a>
         <a href="#" class="menu-item"><i class="fa-solid fa-triangle-exclamation"></i> <span>Emergency Handling</span></a>
@@ -51,11 +51,11 @@
         <!-- Filters -->
         <div class="filters">
         <select id="gradeFilter">
-            <option value="">All Grades</option>
-            <option value="Grade 6">Grade 6</option>
-            <option value="Grade 7">Grade 7</option>
-            <option value="Grade 8">Grade 8</option>
-            <option value="Grade 9">Grade 9</option>
+            <option value="">All Years</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
         </select>
 
         <select id="visitFilter">
@@ -70,13 +70,13 @@
             <tr>
             <th>Student ID</th>
             <th>Name</th>
-            <th>Grade</th>
+            <th>Year</th>
             <th>Recent Visit</th>
             <th>Actions</th>
             </tr>
         </thead>
         <tbody id="studentTableBody">
-            <!-- Filled by JS -->
+            
         </tbody>
         </table>
 
